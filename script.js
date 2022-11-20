@@ -34,6 +34,10 @@ const playRound = (playerChoice, compChoice) => {
   }
 }
 
+const game = () => {
+  playRound()
+}
+
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
