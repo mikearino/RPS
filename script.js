@@ -1,3 +1,5 @@
+const playerSelection = prompt("Enter player selection! Rock, Paper, or Scissors"
+)
 
 const getComputerChoice = () => {
   //randomly choose a number between 1 and 3 then boolean object
@@ -34,10 +36,16 @@ const playRound = (playerChoice, compChoice) => {
   }
 }
 
+//This starts a game with 5 rounds, records score and reports a winner or loser at the end.
 const game = () => {
-  playRound()
+const playerScore = []
+const compScore = []
+  for (i=0; i<5; i++){
+    playRound()
+
+  }
 }
 
-const playerSelection = "rock";
+
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
