@@ -21,23 +21,29 @@ const getComputerChoice = () => {
   //take two params player selection/comp selection and decide who wins
 const playRound = (playerChoice, compChoice) => {
   if (playerChoice == "rock" && compChoice == "scissors") {
-    return "You win! Rock beats scissors!" + playerScore++
+    playerScore++
+    return "You win! Rock beats scissors!" 
   } if (playerChoice == "rock" && compChoice == "rock") {
     return "Tie! Play again"
   } if (playerChoice == "rock" && compChoice == "paper") {
-    return "You lose! paper beats rock!" + compScore++
+    compScore++
+    return "You lose! paper beats rock!"
   } if (playerChoice == "scissors" && compChoice == "paper") {
-    return "You win! Scissors beats paper!" + playerScore++
+    playerScore++
+    return "You win! Scissors beats paper!"
   } if (playerChoice == "scissors" && compChoice == "scissors") {
     return "Tie! Play again"
   } if (playerChoice == "scissors" && compChoice == "rock") {
-    return "You lose! rock beats scissors!" + compScore++
+    compScore++
+    return "You lose! rock beats scissors!"
   } if (playerChoice == "paper" && compChoice == "rock") {
-    return "You win! Scissors beats paper!" + playerScore + 1
+    playerScore++
+    return "You win! Scissors beats paper!" 
   } if (playerChoice == "paper" && compChoice == "paper") {
     return "Tie! Play again"
   } if (playerChoice == "paper" && compChoice == "scissors") {
-    return "You lose! Scissors beats paper!" + compScore++
+    compScore++
+    return "You lose! Scissors beats paper!" 
   }
 }
 
