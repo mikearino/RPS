@@ -4,6 +4,23 @@ let playerScore = [0]
 let compScore = [0]
 
 
+//initialize buttons with event listeners
+const rock = document.querySelector('.rock')
+console.log(rock)
+rock.addEventListener('click', ()=> {
+playRound("rock");
+})
+
+const paper = document.querySelector('.paper')
+rock.addEventListener('click', ()=> {
+playRound("paper");
+})
+
+const scissors = document.querySelector('.scissors')
+rock.addEventListener('click', ()=> {
+playRound("scissors");
+})
+
 const getComputerChoice = () => {
   //randomly choose a number between 1 and 3 then boolean object
   const randomNumber = Math.floor(Math.random() * 3) + 1
@@ -66,6 +83,9 @@ const game = () => {
     } else return console.log("It's a tie bummer!")
 
 }
+
+
+
 
 
 
