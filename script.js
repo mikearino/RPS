@@ -4,22 +4,7 @@ let playerScore = [0]
 let compScore = [0]
 
 
-//initialize buttons with event listeners
-const rock = document.querySelector('.rock')
-console.log(rock)
-rock.addEventListener('click', ()=> {
-playRound("rock");
-})
 
-const paper = document.querySelector('.paper')
-rock.addEventListener('click', ()=> {
-playRound("paper");
-})
-
-const scissors = document.querySelector('.scissors')
-rock.addEventListener('click', ()=> {
-playRound("scissors");
-})
 
 const getComputerChoice = () => {
   //randomly choose a number between 1 and 3 then boolean object
@@ -65,16 +50,16 @@ const playRound = (playerChoice, compChoice) => {
 }
 
 //This starts a game with 5 rounds, records score and reports a winner or loser at the end.
-const game = () => {
-  for (i=0; i<5; i++){
+const game = (playerChoice) => {
+  // for (i=0; i<5; i++){
     const compChoice = getComputerChoice()
-    console.log(`round ${i + 1}`)
+    // console.log(`round ${i + 1}`)
     console.log(`playerScore: ${playerScore}`)
     console.log(`compScore: ${compScore}`)
     console.log(`Computer Choice: ${compChoice}`)
-    const playerChoice = prompt('Choose Rock, Paper, or Scissors!')
+    // const playerChoice = prompt('Choose Rock, Paper, or Scissors!')
     console.log(playRound(playerChoice,compChoice))
-  }
+  // }
     //check score at end
     if (playerScore > compScore) {
       return console.log("Congrats you win!")
@@ -86,9 +71,20 @@ const game = () => {
 
 
 
+//initialize buttons with event listeners
+const rock = document.querySelector('.rock')
+console.log(rock)
+rock.addEventListener('click', ()=> {
+console.log('click')
+game("rock")
+})
 
+const paper = document.querySelector('.paper')
+rock.addEventListener('click', ()=> {
+playRound("paper");
+})
 
-
-game()
-
-
+const scissors = document.querySelector('.scissors')
+rock.addEventListener('click', ()=> {
+playRound("scissors");
+})
