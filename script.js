@@ -3,8 +3,10 @@
 let playerScore = [0]
 let compScore = [0]
 
+let display = document.querySelector('.display')
+// display.innerHTML = `playerScore: ${playerScore}`
 
-
+// innerTextOutput.value 
 
 const getComputerChoice = () => {
   //randomly choose a number between 1 and 3 then boolean object
@@ -54,6 +56,7 @@ const game = (playerChoice) => {
   // for (i=0; i<5; i++){
     const compChoice = getComputerChoice()
     // console.log(`round ${i + 1}`)
+    display.innerHTML = `playerScore: ${playerScore}`
     console.log(`playerScore: ${playerScore}`)
     console.log(`compScore: ${compScore}`)
     console.log(`Computer Choice: ${compChoice}`)
@@ -88,3 +91,4 @@ const scissors = document.querySelector('.scissors')
 scissors.addEventListener('click', ()=> {
 game("scissors")
 })
+
