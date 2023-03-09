@@ -1,12 +1,14 @@
 
 //initialize player scores
-let playerScore = [0]
-let compScore = [0]
+let playerScore = [0];
+let compScore = [0];
+let round = 0;
 
-let display = document.querySelector('.display')
-// display.innerHTML = `playerScore: ${playerScore}`
-
-// innerTextOutput.value 
+//select the div where all the display info will go
+let display = document.querySelector('.display');
+const playerDisplay = document.createElement('div');
+const compDisplay = document.createElement('div');
+const roundDisplay = document.createElement('div');
 
 const getComputerChoice = () => {
   //randomly choose a number between 1 and 3 then boolean object
@@ -51,26 +53,36 @@ const playRound = (playerChoice, compChoice) => {
   }
 }
 
+
 //This starts a game with 5 rounds, records score and reports a winner or loser at the end.
 const game = (playerChoice) => {
   // for (i=0; i<5; i++){
     const compChoice = getComputerChoice()
+
+    roundDisplay.innerHTML = `round ${round}`
+    display.appendChild(roundDisplay)
     // console.log(`round ${i + 1}`)
-    display.innerHTML = `playerScore: ${playerScore}`
-    console.log(`playerScore: ${playerScore}`)
+
+    playerDisplay.innerHTML = `playerScore: ${playerScore}`
+    display.appendChild(playerDisplay)
+    
+    compDisplay.innerHTML = `compScore: ${compScore}`
+    display.appendChild(compDisplay)
+    
     console.log(`compScore: ${compScore}`)
+    
     console.log(`Computer Choice: ${compChoice}`)
     // const playerChoice = prompt('Choose Rock, Paper, or Scissors!')
     console.log(playRound(playerChoice,compChoice))
-  // }
+    // }
     //check score at end
+    round ++
     if (playerScore > compScore) {
       return console.log("Congrats you win!")
     } if (compScore > playerScore) {
       return console.log("You loose booooo!")
     } else return console.log("It's a tie bummer!")
-
-}
+  }
 
 
 
