@@ -12,6 +12,7 @@ const roundDisplay = document.createElement('div');
 const compChoiceDisplay = document.createElement('div');
 const playerChoiceDisplay = document.createElement('div');
 const gameDisplay = document.createElement('div');
+const youWin = document.createElement('div');
 
 const getComputerChoice = () => {
   //randomly choose a number between 1 and 3 then boolean object
@@ -79,15 +80,20 @@ const game = (playerChoice) => {
     gameDisplay.innerHTML = playRound(playerChoice,compChoice)
     display.appendChild(gameDisplay)
     
+    round++
+    youWin.innerHTML = "Congrats you win the game!"
+    youLose.innerHTML = "Bummer you lost the game."
+   
+    
     
     // }
-    round++
     //check score at end
-    if (playerScore > compScore) {
-      return console.log("Congrats you win!")
-    } if (compScore > playerScore) {
-      return console.log("You loose booooo!")
-    } else return console.log("It's a tie bummer!")
+    if (playerScore > compScore && playerScore == 5) {
+      display.appendChild(youWin)
+      // return console.log("Congrats you win!")
+    } if (compScore > playerScore && compScore == 5) {
+      display.appendChild(youLose)
+    }
   }
 
 
