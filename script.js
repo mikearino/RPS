@@ -29,31 +29,33 @@ const getComputerChoice = () => {
   //take two params player selection/comp selection and decide who wins
 const playRound = (playerChoice, compChoice) => {
   if (playerChoice == "rock" && compChoice == "scissors") {
-    playerScore++
+    playerScore += 1
     return `You win! Rock beats scissors!`
   } if (playerChoice == "rock" && compChoice == "rock") {
     return `Tie! Play again.`
   } if (playerChoice == "rock" && compChoice == "paper") {
-    compScore++
+    compScore += 1
     return `You lose! paper beats rock!`
   } if (playerChoice == "scissors" && compChoice == "paper") {
-    playerScore++
+    playerScore += 1
     return `You win! Scissors beats paper!`
   } if (playerChoice == "scissors" && compChoice == "scissors") {
     return `Tie! Play again.`
   } if (playerChoice == "scissors" && compChoice == "rock") {
-    compScore++
+    compScore += 1
     return `You lose! rock beats scissors!`
   } if (playerChoice == "paper" && compChoice == "rock") {
-    playerScore++
+    playerScore += 1
     return `You win! Paper beats rock!`
   } if (playerChoice == "paper" && compChoice == "paper") {
     return `Tie! Play again.`
   } if (playerChoice == "paper" && compChoice == "scissors") {
-    compScore++
+    compScore += 1
     return `You lose! Scissors beats paper!`
   }
 }
+
+
 
 //Starts a game, records score and reports a winner or loser at the end.
 const game = (playerChoice) => {
