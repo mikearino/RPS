@@ -1,4 +1,3 @@
-
 //initialize player scores
 let playerScore = 0;
 let compScore = 0;
@@ -26,7 +25,6 @@ const getComputerChoice = () => {
     return "scissors"
   }
 }
-
 
   //take two params player selection/comp selection and decide who wins
 const playRound = (playerChoice, compChoice) => {
@@ -57,10 +55,8 @@ const playRound = (playerChoice, compChoice) => {
   }
 }
 
-
-//This starts a game with 5 rounds, records score and reports a winner or loser at the end.
+//Starts a game, records score and reports a winner or loser at the end.
 const game = (playerChoice) => {
-  // for (i=0; i<5; i++){
     const compChoice = getComputerChoice()
 
     roundDisplay.innerHTML = `round ${round}`
@@ -85,24 +81,15 @@ const game = (playerChoice) => {
     youWin.innerHTML = "Congrats you win the game!"
     youLose.innerHTML = "Bummer you lost the game."
    
-    
-    
-    // }
-    //check score at end
-    if (playerScore > compScore) {
-       
-       display.appendChild(youWin)
-      // return console.log("Congrats you win!")
-    } if (compScore > playerScore) {
+    if (playerScore >= 5) {
+      display.appendChild(youWin)
+    } if (compScore >= 5) {
       display.appendChild(youLose)
     } else return console.log("It's a tie bummer!")
   }
 
-
-
 //initialize buttons with event listeners
 const rock = document.querySelector('.rock')
-console.log(rock)
 rock.addEventListener('click', ()=> {
 game("rock")
 })
