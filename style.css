@@ -152,4 +152,12 @@ button {
   padding: .1em;
   margin: .2em;
   font-size: 6em;
+
+}
+
+button:active {
+  transform: scale(1.8);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+  
 }
