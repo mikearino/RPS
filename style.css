@@ -147,3 +147,9 @@ h1 {
   font-family: 'Rubik Iso', cursive;
   font-size: 88px;
 }
+
+button {
+  padding: .1em;
+  margin: .2em;
+  font-size: 6em;
+}

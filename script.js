@@ -1,7 +1,23 @@
+let clank = new Audio('media/clank-1.wav') 
+let glass = new Audio('media/glass.wav') 
+let glass2 = new Audio('media/glass-2.wav') 
+let glass3 = new Audio('media/glass-3.wav') 
+let punch = new Audio('media/punch.wav') 
+let scissor = new Audio('media/scissors.wav') 
+
+let audio_files = [clank, glass, glass2, glass3, punch, scissor];
+
+
+
+
+
+
 //initialize player scores
 let playerScore = 0;
 let compScore = 0;
 let round = 1;
+
+
 
 //select the div where all the display info will go
 const display = document.querySelector('.display');
@@ -26,8 +42,10 @@ const getComputerChoice = () => {
   }
 }
 
-  //take two params player selection/comp selection and decide who wins
+//take two params player selection/comp selection and decide who wins
 const playRound = (playerChoice, compChoice) => {
+  let j = [Math.floor(Math.random() *  (6 ))];
+  audio_files[j].play()
   if (playerChoice == "rock" && compChoice == "scissors") {
     playerScore += 1
     return `You win! Rock beats scissors!`
@@ -59,17 +77,16 @@ const playRound = (playerChoice, compChoice) => {
 
 //Starts a game, records score and reports a winner or loser at the end.
 const game = (playerChoice) => {
-    const compChoice = getComputerChoice()
-
-    
-
-    roundDisplay.innerHTML = `round ${round}`
+  const compChoice = getComputerChoice()
+  
+  
+  roundDisplay.innerHTML = `Round ${round}`
     display.appendChild(roundDisplay)
 
-    playerDisplay.innerHTML = `playerScore: ${playerScore}`
+    playerDisplay.innerHTML = `Player Score: ${playerScore}`
     display.appendChild(playerDisplay)
     
-    compDisplay.innerHTML = `compScore: ${compScore}`
+    compDisplay.innerHTML = `Comp Score: ${compScore}`
     display.appendChild(compDisplay)
 
     compChoiceDisplay.innerHTML = `Computer Choice: ${compChoice}`
@@ -109,13 +126,9 @@ const game = (playerChoice) => {
       display.removeChild(compChoiceDisplay)
       display.removeChild(playerChoiceDisplay)
       display.removeChild(gameDisplay)
-    } else return console.log("It's a tie bummer!")
-
-    
+    }
     // youWin.innerHTML = "Congrats you win the game!" 
     // youLose.innerHTML = "Bummer you lost the game."
-   
-    
   }
 
 //initialize buttons with event listeners
