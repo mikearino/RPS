@@ -90,7 +90,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-}
+} 
 
 /* HTML5 display-role reset for older browsers */
 article,
@@ -129,13 +129,21 @@ q:after {
   content: none;
 }
 
+
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
+} 
 
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  }
+
+
+h1 {
+  font-family: 'Rubik Iso', cursive;
+  font-size: 88px;
 }

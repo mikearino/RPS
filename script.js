@@ -61,6 +61,8 @@ const playRound = (playerChoice, compChoice) => {
 const game = (playerChoice) => {
     const compChoice = getComputerChoice()
 
+    
+
     roundDisplay.innerHTML = `round ${round}`
     display.appendChild(roundDisplay)
 
@@ -80,14 +82,40 @@ const game = (playerChoice) => {
     display.appendChild(gameDisplay)
 
     round++
-    youWin.innerHTML = "Congrats you win the game!"
-    youLose.innerHTML = "Bummer you lost the game."
-   
+
     if (playerScore >= 5) {
-      display.appendChild(youWin)
+     
+      // display.appendChild(youWin)
+      alert("Congrats you win the game!")
+      playerScore = 0;
+      compScore = 0;
+      round = 1;
+      display.removeChild(roundDisplay)
+      display.removeChild(playerDisplay)
+      display.removeChild(compDisplay)
+      display.removeChild(compChoiceDisplay)
+      display.removeChild(playerChoiceDisplay)
+      display.removeChild(gameDisplay)
     } if (compScore >= 5) {
-      display.appendChild(youLose)
+      // display.appendChild(youLose)
+      
+      alert("Bummer you lost the game.")
+      playerScore = 0;
+      compScore = 0;
+      round = 1;
+      display.removeChild(roundDisplay)
+      display.removeChild(playerDisplay)
+      display.removeChild(compDisplay)
+      display.removeChild(compChoiceDisplay)
+      display.removeChild(playerChoiceDisplay)
+      display.removeChild(gameDisplay)
     } else return console.log("It's a tie bummer!")
+
+    
+    // youWin.innerHTML = "Congrats you win the game!" 
+    // youLose.innerHTML = "Bummer you lost the game."
+   
+    
   }
 
 //initialize buttons with event listeners
