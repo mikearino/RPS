@@ -89,7 +89,7 @@ const game = (playerChoice) => {
     compDisplay.innerHTML = `Comp Score: ${compScore}`
     display.appendChild(compDisplay)
 
-    compChoiceDisplay.innerHTML = `Computer Choice: ${compChoice}`
+    compChoiceDisplay.innerHTML = `Computer: ${compChoice == "rock" ? "🪨" : '' || compChoice == "paper" ? "📄" : '' || compChoice == "scissors" ? "✂️" : ''}`
     display.appendChild(compChoiceDisplay)
 
     playerChoiceDisplay.innerHTML = `Player Choice: ${playerChoice}`

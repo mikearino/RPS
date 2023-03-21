@@ -140,19 +140,22 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: black;
   }
 
 
 h1 {
   font-family: 'Rubik Iso', cursive;
   font-size: 88px;
+  color: white;
 }
 
 button {
   padding: .1em;
   margin: .2em;
   font-size: 6em;
-
+  background-color: black;
+  border: white .08em dotted;
 }
 
 button:active {
@@ -160,4 +163,8 @@ button:active {
     border-color: #ffc600;
     box-shadow: 0 0 1rem #ffc600;
   
+}
+
+.display {
+  color: white;
 }
