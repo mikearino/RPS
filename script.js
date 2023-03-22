@@ -4,20 +4,20 @@ let glass2 = new Audio('media/glass-2.wav')
 let glass3 = new Audio('media/glass-3.wav') 
 let punch = new Audio('media/punch.wav') 
 let scissor = new Audio('media/scissors.wav') 
+let groan = new Audio('media/groan.wav')
+let moan = new Audio('media/moan.wav')
+let chop = new Audio('media/chop')
+let cheering = new Audio('media/cheering.wav')
+cheering.volume = .5;
+let booing = new Audio('media/booing.wav')
+booing.volume = .5;
 
-let audio_files = [clank, glass, glass2, glass3, punch, scissor];
-
-
-
-
-
+let audio_files = [clank, glass, glass2, glass3, punch, scissor, moan, chop];
 
 //initialize player scores
 let playerScore = 0;
 let compScore = 0;
 let round = 1;
-
-
 
 //select the div where all the display info will go
 const display = document.querySelector('.display');
@@ -44,7 +44,7 @@ const getComputerChoice = () => {
 
 //take two params player selection/comp selection and decide who wins
 const playRound = (playerChoice, compChoice) => {
-  let j = [Math.floor(Math.random() *  (6 ))];
+  let j = [Math.floor(Math.random() *  (8))];
   audio_files[j].play()
   if (playerChoice == "rock" && compChoice == "scissors") {
     playerScore += 1
@@ -89,7 +89,8 @@ const game = (playerChoice) => {
     compDisplay.innerHTML = `Comp Score: ${compScore}`
     display.appendChild(compDisplay)
 
-    compChoiceDisplay.innerHTML = `Computer: ${compChoice == "rock" ? "🪨" : '' || compChoice == "paper" ? "📄" : '' || compChoice == "scissors" ? "✂️" : ''}`
+    compChoiceDisplay.innerHTML = `Computer: ${compChoice == "rock" ? "🪨" : '' 
+    || compChoice == "paper" ? "📄" : '' || compChoice == "scissors" ? "✂️" : ''}`
     display.appendChild(compChoiceDisplay)
 
     playerChoiceDisplay.innerHTML = `Player Choice: ${playerChoice}`
@@ -103,7 +104,8 @@ const game = (playerChoice) => {
     if (playerScore >= 5) {
      
       // display.appendChild(youWin)
-      alert("Congrats you win the game!")
+      cheering.play();
+      setTimeout(function(){alert("Congrats you win the game!")},500);
       playerScore = 0;
       compScore = 0;
       round = 1;
@@ -113,10 +115,10 @@ const game = (playerChoice) => {
       display.removeChild(compChoiceDisplay)
       display.removeChild(playerChoiceDisplay)
       display.removeChild(gameDisplay)
-    } if (compScore >= 5) {
+    } else if (compScore >= 5) {
       // display.appendChild(youLose)
-      
-      alert("Bummer you lost the game.")
+      booing.play();
+      setTimeout(function(){alert("Bummer you lost the game.")},500);
       playerScore = 0;
       compScore = 0;
       round = 1;
