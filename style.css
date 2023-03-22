@@ -168,3 +168,11 @@ button:active {
 .display {
   color: white;
 }
+
+.playerScoreAndRound {
+ background-color: blue;
+}
+
+.compChoicePlusScore {
+ background-color: red;
+}
