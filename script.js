@@ -32,6 +32,9 @@ const youLose = document.createElement('div');
 const roundPlayerScore = document.createElement('div');
 const compChoiceAndScore = document.createElement('div');
 
+roundPlayerScore.classList.add('playerScoreAndRound')
+compChoiceAndScore.classList.add('compChoicePlusScore')
+
 const getComputerChoice = () => {
   //randomly choose a number between 1 and 3 then boolean object
   const randomNumber = Math.floor(Math.random() * 3) + 1
