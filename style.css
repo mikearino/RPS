@@ -167,12 +167,21 @@ button:active {
 
 .display {
   color: white;
+  margin: 5em;
+  border: white 10px dotted;
+  height: 25em;
+  width: 25em;
 }
 
 .playerScoreAndRound {
  background-color: blue;
+ display: flex;
+ justify-content: space-between;
+ 
 }
 
 .compChoicePlusScore {
  background-color: red;
+  display: flex;
+  justify-content: space-between;
 }
