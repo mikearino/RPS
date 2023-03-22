@@ -29,6 +29,8 @@ const playerChoiceDisplay = document.createElement('div');
 const gameDisplay = document.createElement('div');
 const youWin = document.createElement('div');
 const youLose = document.createElement('div');
+const roundPlayerScore = document.createElement('div');
+const compChoiceAndScore = document.createElement('div');
 
 const getComputerChoice = () => {
   //randomly choose a number between 1 and 3 then boolean object
@@ -79,19 +81,20 @@ const playRound = (playerChoice, compChoice) => {
 const game = (playerChoice) => {
   const compChoice = getComputerChoice()
   
-  
-  roundDisplay.innerHTML = `Round ${round}`
-    display.appendChild(roundDisplay)
+    display.appendChild(roundPlayerScore)
+    roundDisplay.innerHTML = `Round ${round}`
+    roundPlayerScore.appendChild(roundDisplay)
 
     playerDisplay.innerHTML = `Player Score: ${playerScore}`
-    display.appendChild(playerDisplay)
+    roundPlayerScore.appendChild(playerDisplay)
     
+    display.appendChild(compChoiceAndScore)
     compDisplay.innerHTML = `Comp Score: ${compScore}`
-    display.appendChild(compDisplay)
+    compChoiceAndScore.appendChild(compDisplay)
 
     compChoiceDisplay.innerHTML = `Computer: ${compChoice == "rock" ? "🪨" : '' 
     || compChoice == "paper" ? "📄" : '' || compChoice == "scissors" ? "✂️" : ''}`
-    display.appendChild(compChoiceDisplay)
+    compChoiceAndScore.appendChild(compChoiceDisplay)
 
     playerChoiceDisplay.innerHTML = `Player Choice: ${playerChoice}`
     display.appendChild(playerChoiceDisplay)
