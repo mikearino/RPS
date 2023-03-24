@@ -22,18 +22,26 @@ let round = 1;
 //select the div where all the display info will go
 const display = document.querySelector('.display');
 const playerDisplay = document.createElement('div');
+playerDisplay.classList.add('playerScore');
 const compDisplay = document.createElement('div');
+compDisplay.classList.add('compScore');
 const roundDisplay = document.createElement('div');
+roundDisplay.classList.add('round');
+
 const compChoiceDisplay = document.createElement('div');
+compChoiceDisplay.classList.add('compChoice');
 const playerChoiceDisplay = document.createElement('div');
 const gameDisplay = document.createElement('div');
+gameDisplay.classList.add('gameDisplay');
+
 const youWin = document.createElement('div');
+
 const youLose = document.createElement('div');
 const roundPlayerScore = document.createElement('div');
-const compChoiceAndScore = document.createElement('div');
-
 roundPlayerScore.classList.add('playerScoreAndRound')
+const compChoiceAndScore = document.createElement('div');
 compChoiceAndScore.classList.add('compChoicePlusScore')
+
 
 const getComputerChoice = () => {
   //randomly choose a number between 1 and 3 then boolean object
@@ -84,6 +92,9 @@ const playRound = (playerChoice, compChoice) => {
 const game = (playerChoice) => {
   const compChoice = getComputerChoice()
   
+    gameDisplay.innerHTML = playRound(playerChoice,compChoice)
+    display.appendChild(gameDisplay)
+
     display.appendChild(roundPlayerScore)
     roundDisplay.innerHTML = `Round ${round}`
     roundPlayerScore.appendChild(roundDisplay)
@@ -95,15 +106,15 @@ const game = (playerChoice) => {
     compDisplay.innerHTML = `Comp Score: ${compScore}`
     compChoiceAndScore.appendChild(compDisplay)
 
-    compChoiceDisplay.innerHTML = `Computer: ${compChoice == "rock" ? "🪨" : '' 
-    || compChoice == "paper" ? "📄" : '' || compChoice == "scissors" ? "✂️" : ''}`
+    compChoiceDisplay.innerHTML = `${compChoice == "rock" ? "🪨" : '' 
+    || compChoice == "paper" ? "📄" : '' || compChoice == "scissors" ? "✂️" : ''}🤖`
     compChoiceAndScore.appendChild(compChoiceDisplay)
+    
+    // Possibly remove 🤖this\/
+    // playerChoiceDisplay.innerHTML = `Player Choice: ${playerChoice}`
+    // display.appendChild(playerChoiceDisplay)
 
-    playerChoiceDisplay.innerHTML = `Player Choice: ${playerChoice}`
-    display.appendChild(playerChoiceDisplay)
-
-    gameDisplay.innerHTML = playRound(playerChoice,compChoice)
-    display.appendChild(gameDisplay)
+    
 
     round++
 

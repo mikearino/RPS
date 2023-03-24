@@ -180,6 +180,19 @@ button:active {
  margin: 2em;
 }
 
+.compScore {
+  margin-right: 2em;
+}
+
+.compChoice {
+  font-size: 8em;
+}
+
+.gameDisplay {
+  display: flex;
+  justify-content: center;
+}
+
 .playerScoreAndRound {}
 
 .playerScoreAndRound {}
