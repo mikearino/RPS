@@ -99,11 +99,11 @@ const game = (playerChoice) => {
     roundDisplay.innerHTML = `Round ${round}`
     roundPlayerScore.appendChild(roundDisplay)
 
-    playerDisplay.innerHTML = `Player Score: ${playerScore}`
+    playerDisplay.innerHTML = `Player: ${playerScore}`
     roundPlayerScore.appendChild(playerDisplay)
     
     display.appendChild(compChoiceAndScore)
-    compDisplay.innerHTML = `Comp Score: ${compScore}`
+    compDisplay.innerHTML = `Comp: ${compScore}`
     compChoiceAndScore.appendChild(compDisplay)
 
     compChoiceDisplay.innerHTML = `${compChoice == "rock" ? "🪨" : '' 

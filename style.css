@@ -167,14 +167,12 @@ button:active {
 
 .display {
   color: white;
-  margin: 5em;
-  border: white 10px dotted;
+  border: white 10px;
   height: 25em;
   width: 25em;
 }
 
 .playerScoreAndRound {
- background-color: blue;
  display: flex;
  justify-content: space-between;
  margin: 2em;
@@ -182,28 +180,44 @@ button:active {
 
 .compScore {
   margin-right: 2em;
+  font-family: 'Rubik Iso', cursive;
 }
 
 .compChoice {
   font-size: 8em;
+  font-family: 'Rubik Iso', cursive;
 }
 
 .gameDisplay {
   display: flex;
   justify-content: center;
+  font-family: 'Rubik Iso', cursive;
+  font-size: 3em;
 }
 
-.playerScoreAndRound {}
+.round {
+  font-size: 2em;
+}
 
-.playerScoreAndRound {}
+.playerScoreAndRound {
+  font-family: 'Rubik Iso', cursive;
+}
+.compScore {
+  font-size: 2em;
+}
+
+.playerScore{
+  font-size: 2em;
+}
 
 .playerScoreAndRound {}
 
 .compChoicePlusScore {
  margin: 2em;
- background-color: red;
  display: flex;
  justify-content: space-between;
 }
+
+
 
 .compChoicePlusScore {}
