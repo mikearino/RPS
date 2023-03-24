@@ -1,3 +1,4 @@
+let acid = new Audio('media/Acid.wav')
 let clank = new Audio('media/clank-1.wav') 
 let glass = new Audio('media/glass.wav') 
 let glass2 = new Audio('media/glass-2.wav') 
@@ -12,12 +13,16 @@ cheering.volume = .5;
 let booing = new Audio('media/booing.wav')
 booing.volume = .5;
 
+
+
 let audio_files = [clank, glass, glass2, glass3, punch, scissor, moan, chop];
 
 //initialize player scores
 let playerScore = 0;
 let compScore = 0;
 let round = 1;
+
+setTimeout(acid.play(),500);
 
 //select the div where all the display info will go
 const display = document.querySelector('.display');
@@ -122,7 +127,7 @@ const game = (playerChoice) => {
      
       // display.appendChild(youWin)
       cheering.play();
-      setTimeout(function(){alert("Congrats you win the game!")},500);
+      setTimeout(function(){alert("Congrats you win the game!"),document.location.reload()},500);
       playerScore = 0;
       compScore = 0;
       round = 1;
@@ -135,7 +140,7 @@ const game = (playerChoice) => {
     } else if (compScore >= 5) {
       // display.appendChild(youLose)
       booing.play();
-      setTimeout(function(){alert("Bummer you lost the game.")},500);
+      setTimeout(function(){alert("Bummer you lost the game."),document.location.reload()},500);
       playerScore = 0;
       compScore = 0;
       round = 1;
@@ -165,4 +170,5 @@ const scissors = document.querySelector('.scissors')
 scissors.addEventListener('click', ()=> {
 game("scissors")
 })
+
 

@@ -148,7 +148,9 @@ h1 {
   font-family: 'Rubik Iso', cursive;
   font-size: 88px;
   color: white;
-}
+  }
+    
+
 
 button {
   padding: .1em;
@@ -162,8 +164,35 @@ button:active {
   transform: scale(1.8);
     border-color: #ffc600;
     box-shadow: 0 0 1rem #ffc600;
-  
 }
+button:hover {
+  animation-duration: .1s;
+  animation-name: grow;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  
+    }
+
+          
+              @keyframes grow {
+            from {
+                  transform: rotate(0deg);
+                  transform: scale(1.2);
+                }
+          
+            /* 75% {
+                  font-size: 300%;
+                  margin-left: 25%;
+                  width: 150%;
+                } */
+          
+             to {
+                  transform: rotate(360deg)
+                } 
+              } 
+
+  
+     
 
 .display {
   color: white;
@@ -218,6 +247,31 @@ button:active {
  justify-content: space-between;
 }
 
+h1{
+animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+
+
+ @keyframes slidein {
+   from {
+     margin-left: 100%;
+     width: 300%;
+   }
+
+   75% {
+     font-size: 300%;
+     margin-left: 25%;
+     width: 150%;
+   }
+
+   to {
+     margin-left: 0%;
+     width: 100%;
+   }
+ }
 
 
 /* .compChoicePlusScore {} *//* .compChoicePlusScore {} */
