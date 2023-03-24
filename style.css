@@ -210,7 +210,7 @@ button:active {
   font-size: 2em;
 }
 
-.playerScoreAndRound {}
+/* .playerScoreAndRound {} */
 
 .compChoicePlusScore {
  margin: 2em;
@@ -220,4 +220,4 @@ button:active {
 
 
 
-.compChoicePlusScore {}
+/* .compChoicePlusScore {} */
