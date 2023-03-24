@@ -152,7 +152,7 @@ h1 {
 
 button {
   padding: .1em;
-  margin: .2em;
+  margin: .1em;
   font-size: 6em;
   background-color: black;
   border: white .08em dotted;
@@ -177,11 +177,20 @@ button:active {
  background-color: blue;
  display: flex;
  justify-content: space-between;
- 
+ margin: 2em;
 }
 
+.playerScoreAndRound {}
+
+.playerScoreAndRound {}
+
+.playerScoreAndRound {}
+
 .compChoicePlusScore {
+ margin: 2em;
  background-color: red;
-  display: flex;
-  justify-content: space-between;
+ display: flex;
+ justify-content: space-between;
 }
+
+.compChoicePlusScore {}
