@@ -140,14 +140,37 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: black;
+  /* background-color: black; */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, black);
+    background-size: 400% 400%;
+    animation: gradient 1s ease infinite;
+    height: 100vh;
   }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 20%;
+      }
+      25% {
+          background-position: 80% 15%;
+        }
+      50% {
+        background-position: 100% 5%;
+      }
+      75% {
+        background-position: 90% 1%;
+      }
+      100% {
+        background-position: 10% 30%;
+      }
+    }
 
 
 h1 {
   font-family: 'Rubik Iso', cursive;
   font-size: 60px;
   color: white;
+  font-weight: bold;
   }
     
 
@@ -156,8 +179,9 @@ button {
   padding: .1em;
   margin: .1em;
   font-size: 6em;
-  background-color: black;
-  border: white .08em dotted;
+  background-color: black; 
+  border: white .06em solid;
+  border-radius: 15%;
 }
 
 button:active {
@@ -170,26 +194,35 @@ button:hover {
   animation-name: grow;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
-  
     }
+      @keyframes grow {
+    from {
+          transform: rotate(0deg);
+          transform: scale(1.2);
+        }
+      to {
+          transform: rotate(360deg)
+        } 
+      } 
 
-          
-              @keyframes grow {
-            from {
-                  transform: rotate(0deg);
-                  transform: scale(1.2);
-                }
-          
-            /* 75% {
-                  font-size: 300%;
-                  margin-left: 25%;
-                  width: 150%;
-                } */
-          
-             to {
-                  transform: rotate(360deg)
-                } 
-              } 
+button:focus {
+  animation-duration: .4s;
+  animation-name: grow;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes grow {
+  from {
+    transform: rotate(0deg);
+    transform: scale(1.2);
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
+
 
   
      
@@ -210,19 +243,55 @@ button:hover {
 .compScore {
   margin-right: 2em;
   font-family: 'Rubik Iso', cursive;
+  font-weight: bold;
 }
 
 .compChoice {
   font-size: 8em;
   font-family: 'Rubik Iso', cursive;
-}
+  font-weight: bold;
+  
+
+
+    animation-duration: .1s;
+    animation-name: grow;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+  }
+
+  @keyframes grow {
+    from {
+      transform: rotate(0deg);
+      transform: scale(1.1);
+    }
+
+    to {
+      transform: rotate(360deg)
+    }
+  }
 
 .gameDisplay {
   display: flex;
   justify-content: center;
   font-family: 'Rubik Iso', cursive;
+  font-weight: bold;
   font-size: 2em;
   height: 50px;
+  animation-duration: .1s;
+    animation-name: grow;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+  }
+  
+  @keyframes grow {
+    from {
+      transform: rotate(0deg);
+      transform: scale(1.1);
+    }
+  
+    to {
+      transform: rotate(360deg)
+    }
 }
 
 .round {
@@ -231,9 +300,40 @@ button:hover {
 
 .playerScoreAndRound {
   font-family: 'Rubik Iso', cursive;
+  font-weight: bold;
+  animation-duration: .3s;
+    animation-name: grow;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+  }
+  
+  @keyframes grow {
+    from {
+      transform: rotate(0deg);
+      transform: scale(1.1);
+    }
+  
+    to {
+      transform: rotate(360deg)
+    }
 }
 .compScore {
   font-size: 2em;
+  animation-duration: .2s;
+    animation-name: grow;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+  }
+  
+  @keyframes grow {
+    from {
+      transform: rotate(0deg);
+      transform: scale(1.1);
+    }
+  
+    to {
+      transform: rotate(360deg)
+    }
 }
 
 .playerScore{

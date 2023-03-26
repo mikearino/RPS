@@ -1,3 +1,7 @@
+
+document.body.addEventListener("mousemove", function () {
+    acid.play()
+})
 let acid = new Audio('media/Acid.wav')
 let clank = new Audio('media/clank-1.wav') 
 let glass = new Audio('media/glass.wav') 
@@ -22,7 +26,7 @@ let playerScore = 5;
 let compScore = 5;
 let round = 1;
 
-setTimeout(acid.play(),500);
+// setTimeout(acid.play(),500);
 
 //select the div where all the display info will go
 const display = document.querySelector('.display');
@@ -127,7 +131,7 @@ const game = (playerChoice) => {
     if (playerScore <= 0) {
      
       // display.appendChild(youWin)
-      cheering.play();
+      booing.play();
       setTimeout(function(){alert("Bummer you lost the game."),document.location.reload()},500);
       playerScore = 5;
       compScore = 5;
@@ -140,7 +144,7 @@ const game = (playerChoice) => {
       display.removeChild(gameDisplay)
     } else if (compScore <= 0) {
       // display.appendChild(youLose)
-      booing.play();
+      cheering.play();
       setTimeout(function(){alert("Congrats you win the game!"),document.location.reload()},500);
       playerScore = 5;
       compScore = 5;
