@@ -18,8 +18,8 @@ booing.volume = .5;
 let audio_files = [clank, glass, glass2, glass3, punch, scissor, moan, chop];
 
 //initialize player scores
-let playerScore = 0;
-let compScore = 0;
+let playerScore = 5;
+let compScore = 5;
 let round = 1;
 
 setTimeout(acid.play(),500);
@@ -66,28 +66,28 @@ const playRound = (playerChoice, compChoice) => {
   audio_files[j].play()
   console.log(audio_files[j])
   if (playerChoice == "rock" && compChoice == "scissors") {
-    playerScore += 1
+    compScore -= 1
     return `You win! Rock beats scissors!`
   } if (playerChoice == "rock" && compChoice == "rock") {
     return `Tie! Play again.`
   } if (playerChoice == "rock" && compChoice == "paper") {
-    compScore += 1
+    playerScore -= 1
     return `You lose! paper beats rock!`
   } if (playerChoice == "scissors" && compChoice == "paper") {
-    playerScore += 1
+    compScore -= 1
     return `You win! Scissors beats paper!`
   } if (playerChoice == "scissors" && compChoice == "scissors") {
     return `Tie! Play again.`
   } if (playerChoice == "scissors" && compChoice == "rock") {
-    compScore += 1
+    playerScore -= 1
     return `You lose! rock beats scissors!`
   } if (playerChoice == "paper" && compChoice == "rock") {
-    playerScore += 1
+    compScore -= 1
     return `You win! Paper beats rock!`
   } if (playerChoice == "paper" && compChoice == "paper") {
     return `Tie! Play again.`
   } if (playerChoice == "paper" && compChoice == "scissors") {
-    compScore += 1
+    playerScore -= 1
     return `You lose! Scissors beats paper!`
   }
 }
@@ -98,18 +98,18 @@ const playRound = (playerChoice, compChoice) => {
 const game = (playerChoice) => {
   const compChoice = getComputerChoice()
   
+  display.appendChild(roundPlayerScore)
+  roundDisplay.innerHTML = `Round ${round}`
+  roundPlayerScore.appendChild(roundDisplay)
+
+  playerDisplay.innerHTML = `Player ♥️ ${playerScore}`
+  roundPlayerScore.appendChild(playerDisplay)
     gameDisplay.innerHTML = playRound(playerChoice,compChoice)
     display.appendChild(gameDisplay)
 
-    display.appendChild(roundPlayerScore)
-    roundDisplay.innerHTML = `Round ${round}`
-    roundPlayerScore.appendChild(roundDisplay)
-
-    playerDisplay.innerHTML = `Player: ${playerScore}`
-    roundPlayerScore.appendChild(playerDisplay)
     
     display.appendChild(compChoiceAndScore)
-    compDisplay.innerHTML = `Comp: ${compScore}`
+    compDisplay.innerHTML = `Comp ♥️ ${compScore}`
     compChoiceAndScore.appendChild(compDisplay)
 
     compChoiceDisplay.innerHTML = `${compChoice == "rock" ? "🪨" : '' 
@@ -124,13 +124,13 @@ const game = (playerChoice) => {
 
     round++
 
-    if (playerScore >= 5) {
+    if (playerScore <= 0) {
      
       // display.appendChild(youWin)
       cheering.play();
-      setTimeout(function(){alert("Congrats you win the game!"),document.location.reload()},500);
-      playerScore = 0;
-      compScore = 0;
+      setTimeout(function(){alert("Bummer you lost the game."),document.location.reload()},500);
+      playerScore = 5;
+      compScore = 5;
       round = 1;
       display.removeChild(roundDisplay)
       display.removeChild(playerDisplay)
@@ -138,12 +138,12 @@ const game = (playerChoice) => {
       display.removeChild(compChoiceDisplay)
       display.removeChild(playerChoiceDisplay)
       display.removeChild(gameDisplay)
-    } else if (compScore >= 5) {
+    } else if (compScore <= 0) {
       // display.appendChild(youLose)
       booing.play();
-      setTimeout(function(){alert("Bummer you lost the game."),document.location.reload()},500);
-      playerScore = 0;
-      compScore = 0;
+      setTimeout(function(){alert("Congrats you win the game!"),document.location.reload()},500);
+      playerScore = 5;
+      compScore = 5;
       round = 1;
       display.removeChild(roundDisplay)
       display.removeChild(playerDisplay)

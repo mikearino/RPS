@@ -146,7 +146,7 @@ body {
 
 h1 {
   font-family: 'Rubik Iso', cursive;
-  font-size: 88px;
+  font-size: 60px;
   color: white;
   }
     
@@ -198,7 +198,7 @@ button:hover {
   color: white;
   border: white 10px;
   height: 25em;
-  width: 25em;
+  width: 30em;
 }
 
 .playerScoreAndRound {
@@ -221,7 +221,8 @@ button:hover {
   display: flex;
   justify-content: center;
   font-family: 'Rubik Iso', cursive;
-  font-size: 3em;
+  font-size: 2em;
+  height: 50px;
 }
 
 .round {
