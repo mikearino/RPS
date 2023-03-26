@@ -7,7 +7,7 @@ let punch = new Audio('media/punch.wav')
 let scissor = new Audio('media/scissors.wav') 
 let groan = new Audio('media/groan.wav')
 let moan = new Audio('media/moan.wav')
-let chop = new Audio('media/chop')
+let chop = new Audio('media/chop.wav')
 let cheering = new Audio('media/cheering.wav')
 cheering.volume = .5;
 let booing = new Audio('media/booing.wav')
@@ -64,6 +64,7 @@ const getComputerChoice = () => {
 const playRound = (playerChoice, compChoice) => {
   let j = [Math.floor(Math.random() *  (8))];
   audio_files[j].play()
+  console.log(audio_files[j])
   if (playerChoice == "rock" && compChoice == "scissors") {
     playerScore += 1
     return `You win! Rock beats scissors!`
