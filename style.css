@@ -420,6 +420,10 @@ h1{
  }
 
  @media (max-width: 640px) {
+  .gameDisplay {
+    font-size: 20px;
+    margin-right: 1em;
+  }
    .rock, .paper, .scissors {
      height: 1em;
      width: 1em;
@@ -428,13 +432,14 @@ h1{
    }
   .compChoice {
     display: flex;
-    font-size: 4em;
+    font-size: 3em;
+    margin-right: .5em;
   }
   .compChoicePlusScore {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  margin: 1em;
+
   }
   .playerScoreAndRound {
 
@@ -447,5 +452,11 @@ h1{
     animation-name: grow;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
+  }
+  .playerScore {
+    margin-right: .5em;
+  }
+  .round {
+    margin-right: -1em;
   }
  }
