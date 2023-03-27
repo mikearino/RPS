@@ -432,7 +432,7 @@ h1{
    }
   .compChoice {
     display: flex;
-    font-size: 5em;
+    font-size: 3em;
     margin-right: .5em;
   }
   .compChoicePlusScore {
@@ -441,6 +441,9 @@ h1{
   flex-direction: row;
 
   }
+  .compScore {
+    margin-right: 15px;
+  };
   .playerScoreAndRound {
 
     display: flex;
