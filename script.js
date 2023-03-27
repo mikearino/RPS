@@ -1,8 +1,8 @@
+let acid = new Audio('media/Acid.wav')
+acid.volume = .1;
 window.addEventListener("load", (event) => {
   acid.play()
 });
-let acid = new Audio('media/Acid.wav')
-acid.volume = .1;
 let clank = new Audio('media/clank-1.wav')
 clank.volume =.05; 
 let glass = new Audio('media/glass.wav') 
