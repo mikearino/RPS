@@ -250,23 +250,19 @@ button:focus {
   font-size: 8em;
   font-family: 'Rubik Iso', cursive;
   font-weight: bold;
-  
-
-
-    animation-duration: .1s;
-    animation-name: grow;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
+  animation-duration: .3s;
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
   }
 
-  @keyframes grow {
+  @keyframes spin {
     from {
-      transform: rotate(0deg);
-      transform: scale(1.1);
+      transform: rotate(-30deg);
     }
 
     to {
-      transform: rotate(360deg)
+      transform: rotate(60deg)
     }
   }
 
@@ -278,21 +274,23 @@ button:focus {
   font-size: 2em;
   height: 50px;
   animation-duration: .1s;
-    animation-name: grow;
+    animation-name: spin;
     animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
+    animation-direction: alternate;
   }
   
-  @keyframes grow {
+  @keyframes spin {
     from {
-      transform: rotate(0deg);
-      transform: scale(1.1);
+      transform: rotate(-2deg);
     }
   
     to {
-      transform: rotate(360deg)
+      transform: rotate(3deg)
     }
+  }
 }
+
+
 
 .round {
   font-size: 2em;
@@ -349,7 +347,7 @@ button:focus {
 }
 
 h1{
-animation-duration: 3s;
+  animation-duration: 3s;
   animation-name: slidein;
   animation-iteration-count: 1;
   animation-direction: alternate;
@@ -372,7 +370,9 @@ animation-duration: 3s;
      margin-left: 0%;
      width: 100%;
    }
- }
+ 
+  }
+ 
 
 
 /* .compChoicePlusScore {} *//* .compChoicePlusScore {} */
