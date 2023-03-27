@@ -23,8 +23,11 @@ let audio_files = [clank, glass, glass2, glass3, punch, scissor, moan, chop];
 
 //initialize player scores
 let playerScore = 5;
+let playerHeartsArray = ['♥️','♥️','♥️','♥️','♥️']
 let compScore = 5;
+let computerHeartsArray = ['♥️','♥️','♥️','♥️','♥️'];
 let round = 1;
+
 
 // setTimeout(acid.play(),500);
 
@@ -74,27 +77,33 @@ const playRound = (playerChoice, compChoice) => {
   console.log(audio_files[j])
   if (playerChoice == "rock" && compChoice == "scissors") {
     compScore -= 1
+    computerHeartsArray.pop()
     return `You win! Rock beats scissors!`
   } if (playerChoice == "rock" && compChoice == "rock") {
     return `Tie! Play again.`
   } if (playerChoice == "rock" && compChoice == "paper") {
     playerScore -= 1
+    playerHeartsArray.pop()
     return `You lose! paper beats rock!`
   } if (playerChoice == "scissors" && compChoice == "paper") {
     compScore -= 1
+    computerHeartsArray.pop()
     return `You win! Scissors beats paper!`
   } if (playerChoice == "scissors" && compChoice == "scissors") {
     return `Tie! Play again.`
   } if (playerChoice == "scissors" && compChoice == "rock") {
     playerScore -= 1
+    playerHeartsArray.pop()
     return `You lose! rock beats scissors!`
   } if (playerChoice == "paper" && compChoice == "rock") {
     compScore -= 1
+    computerHeartsArray.pop()
     return `You win! Paper beats rock!`
   } if (playerChoice == "paper" && compChoice == "paper") {
     return `Tie! Play again.`
   } if (playerChoice == "paper" && compChoice == "scissors") {
     playerScore -= 1
+    playerHeartsArray.pop()
     return `You lose! Scissors beats paper!`
   }
 }
@@ -109,14 +118,14 @@ const game = (playerChoice) => {
   roundDisplay.innerHTML = `Round ${round}`
   roundPlayerScore.appendChild(roundDisplay)
 
-  playerDisplay.innerHTML = `Player ♥️ ${playerScore}`
+  gameDisplay.innerHTML = playRound(playerChoice,compChoice)
+  display.appendChild(gameDisplay)
+  
+  playerDisplay.innerHTML = `🧑‍🚀 ${playerHeartsArray.join('')}`
   roundPlayerScore.appendChild(playerDisplay)
-    gameDisplay.innerHTML = playRound(playerChoice,compChoice)
-    display.appendChild(gameDisplay)
-
     
     display.appendChild(compChoiceAndScore)
-    compDisplay.innerHTML = `Comp ♥️ ${compScore}`
+    compDisplay.innerHTML = `🤖 ${computerHeartsArray.join('')}`
     compChoiceAndScore.appendChild(compDisplay)
 
     compChoiceDisplay.innerHTML = `${compChoice == "rock" ? "🪨" : '' 
@@ -130,7 +139,7 @@ const game = (playerChoice) => {
     
 
     round++
-
+    console.table(playerScore, compScore)
     if (playerScore <= 0) {
      
       // display.appendChild(youWin)

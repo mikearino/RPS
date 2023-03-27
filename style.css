@@ -231,19 +231,16 @@ button:focus {
   color: white;
   border: white 10px;
   height: 25em;
-  width: 30em;
+  width: 35em;
 }
 
-.playerScoreAndRound {
- display: flex;
- justify-content: space-between;
- margin: 2em;
-}
 
 .compScore {
-  margin-right: 2em;
+  width: 6em;
   font-family: 'Rubik Iso', cursive;
   font-weight: bold;
+  display: flex;
+  white-space: nowrap;
 }
 
 .compChoice {
@@ -297,6 +294,11 @@ button:focus {
 }
 
 .playerScoreAndRound {
+  
+      display: flex;
+      justify-content: space-around;
+      margin: 2em;
+    justify-content: space-around;
   font-family: 'Rubik Iso', cursive;
   font-weight: bold;
   animation-duration: .3s;
@@ -343,7 +345,8 @@ button:focus {
 .compChoicePlusScore {
  margin: 2em;
  display: flex;
- justify-content: space-between;
+ justify-content: space-around;
+ flex-direction: row;
 }
 
 h1{
