@@ -1,31 +1,30 @@
 
-document.body.addEventListener("mousemove", function () {
-    acid.play()
-})
-let acid = new Audio('media/Acid.wav')
-acid.volume = .1;
+// document.body.addEventListener("mousemove", function () {
+//     acid.play()
+// })
+let acid = document.querySelector('.acid').volume = .4;
 let clank = new Audio('media/clank-1.wav')
-clank.volume =.008; 
+clank.volume =.05; 
 let glass = new Audio('media/glass.wav') 
-glass.volume = .008;
+glass.volume = .05;
 let glass2 = new Audio('media/glass-2.wav') 
-glass2.volume = .008;
+glass2.volume = .05;
 let glass3 = new Audio('media/glass-3.wav') 
-glass3.volume = .008;
+glass3.volume = .05;
 let punch = new Audio('media/punch.wav') 
-punch.volume = .008;
+punch.volume = .05;
 let scissor = new Audio('media/scissors.wav') 
-scissor.volume = .008;
+scissor.volume = .05;
 let groan = new Audio('media/groan.wav')
-groan.volume = .008;
+groan.volume = .05;
 let moan = new Audio('media/moan.wav')
-moan.volume = .008;
+moan.volume = .05;
 let chop = new Audio('media/chop.wav')
-chop.volume = .008;
+chop.volume = .05;
 let cheering = new Audio('media/cheering.wav')
-cheering.volume = .01;
+cheering.volume = .05;
 let booing = new Audio('media/booing.wav')
-booing.volume = .01;
+booing.volume = .05;
 
 
 
