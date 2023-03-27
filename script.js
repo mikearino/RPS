@@ -130,7 +130,7 @@ const game = (playerChoice) => {
 
     compChoiceDisplay.innerHTML = `${compChoice == "rock" ? "🪨" : '' 
     || compChoice == "paper" ? "📄" : '' || compChoice == "scissors" ? "✂️" : ''}🤖`
-    setTimeout(function(){compChoiceAndScore.appendChild(compChoiceDisplay)},1);
+    compChoiceAndScore.appendChild(compChoiceDisplay)
     // Possibly remove 🤖this\/
     // playerChoiceDisplay.innerHTML = `Player Choice: ${playerChoice}`
     // display.appendChild(playerChoiceDisplay)
