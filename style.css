@@ -172,7 +172,7 @@ h1 {
   color: white;
   font-weight: bold;
   text-align: center;
-  margin: .1em;
+  margin: .5em;
   }
     
 h2 {
@@ -264,6 +264,7 @@ button:focus {
   font-weight: bold;
   display: flex;
   white-space: nowrap;
+  margin-right: 1em;
 }
 
 .compChoice {
@@ -416,4 +417,35 @@ h1{
     to {
       transform: rotate(-2deg)
     }
+ }
+
+ @media (max-width: 640px) {
+   .rock, .paper, .scissors {
+     height: 1em;
+     width: 1em;
+     background-color: black;
+     font-size: 3em;
+   }
+  .compChoice {
+    display: flex;
+    font-size: 4em;
+  }
+  .compChoicePlusScore {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 1em;
+  }
+  .playerScoreAndRound {
+
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    font-family: 'Rubik Iso', cursive;
+    font-weight: bold;
+    animation-duration: .3s;
+    animation-name: grow;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+  }
  }
