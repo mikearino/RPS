@@ -200,6 +200,7 @@ instructions.setAttribute('style', 'display: none;');
 setTimeout(function(){title.classList.add('change')},3500);
 setTimeout(function(){console.log("wow")},3500);
 
-window.addEventListener("load", (event) => {
-  acid.play()
-});
+setTimeout(function(){acid.play()},300);
+// window.addEventListener("load", (event) => {
+//   acid.play()
+// });
