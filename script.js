@@ -29,6 +29,9 @@ let round = 1;
 // setTimeout(acid.play(),500);
 
 //select the div where all the display info will go
+const title = document.querySelector('h1');
+//After 2 seconds change the class to wobble
+
 const display = document.querySelector('.display');
 const playerDisplay = document.createElement('div');
 playerDisplay.classList.add('playerScore');
@@ -176,4 +179,5 @@ scissors.addEventListener('click', ()=> {
 game("scissors")
 })
 
-
+setTimeout(function(){title.classList.add('change')},3500);
+setTimeout(function(){console.log("wow")},3500);

@@ -288,12 +288,12 @@ button:focus {
       transform: rotate(3deg)
     }
   }
-}
+
 
 
 
 .round {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .playerScoreAndRound {
@@ -370,9 +370,24 @@ h1{
      margin-left: 0%;
      width: 100%;
    }
+ }
  
+ .change {
+  animation-name: wobbles;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
- 
+  
+  @keyframes wobbles {
+    from {
+      transform: rotate(2deg);
+    }
+  
+    to {
+      transform: rotate(-2deg)
+    }
+ }
 
 
 /* .compChoicePlusScore {} *//* .compChoicePlusScore {} */
