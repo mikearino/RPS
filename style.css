@@ -177,6 +177,7 @@ h1 {
     
 h2 {
   margin-top: 1em;
+  
     font-family: 'Russo One', sans-serif;
   font-size: 40px;
   color: white;
@@ -201,10 +202,11 @@ h2 {
 button {
   padding: .1em;
   margin: .1em;
-  font-size: 6em;
+  font-size: 5em;
   background-color: black; 
   border: white .06em solid;
   border-radius: 15%;
+  margin-top: .2em;
 }
 
 button:active {
@@ -418,8 +420,12 @@ h1{
       transform: rotate(-2deg)
     }
  }
+ 
 
  @media (max-width: 640px) {
+  h2 {
+    margin-bottom: 1em;
+  } 
   .gameDisplay {
     font-size: 20px;
     margin-right: 1em;
@@ -462,4 +468,9 @@ h1{
   .round {
     margin-right: -5em;
   }
+ }
+
+ .weaponContainer {
+  margin-bottom: 3em;
+  font-size: 2em;
  }
