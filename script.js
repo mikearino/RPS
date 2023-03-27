@@ -1,8 +1,8 @@
-
-// document.body.addEventListener("mousemove", function () {
-//     acid.play()
-// })
-let acid = document.querySelector('.acid').volume = .4;
+window.addEventListener("load", (event) => {
+  acid.play()
+});
+let acid = new Audio('media/Acid.wav')
+acid.volume = .1;
 let clank = new Audio('media/clank-1.wav')
 clank.volume =.05; 
 let glass = new Audio('media/glass.wav') 
@@ -22,9 +22,9 @@ moan.volume = .05;
 let chop = new Audio('media/chop.wav')
 chop.volume = .05;
 let cheering = new Audio('media/cheering.wav')
-cheering.volume = .05;
+cheering.volume = .01;
 let booing = new Audio('media/booing.wav')
-booing.volume = .05;
+booing.volume = .01;
 
 
 
