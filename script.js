@@ -42,7 +42,7 @@ const compDisplay = document.createElement('div');
 compDisplay.classList.add('compScore');
 const roundDisplay = document.createElement('div');
 roundDisplay.classList.add('round');
-
+const instructions = document.querySelector('h2')
 const compChoiceDisplay = document.createElement('div');
 compChoiceDisplay.classList.add('compChoice');
 const playerChoiceDisplay = document.createElement('div');
@@ -176,16 +176,19 @@ const game = (playerChoice) => {
 const rock = document.querySelector('.rock')
 rock.addEventListener('click', ()=> {
 game("rock")
+instructions.setAttribute('style', 'display: none;'); 
 })
 
 const paper = document.querySelector('.paper')
 paper.addEventListener('click', ()=> {
-game("paper")
+game("paper"); 
+instructions.setAttribute('style', 'display: none;'); 
 })
 
 const scissors = document.querySelector('.scissors')
 scissors.addEventListener('click', ()=> {
 game("scissors")
+instructions.setAttribute('style', 'display: none;'); 
 })
 
 setTimeout(function(){title.classList.add('change')},3500);

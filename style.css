@@ -171,9 +171,32 @@ h1 {
   font-size: 60px;
   color: white;
   font-weight: bold;
+  text-align: center;
+  margin: .1em;
   }
     
-
+h2 {
+  margin-top: 1em;
+    font-family: 'Russo One', sans-serif;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  animation-duration: 5s;
+    animation-name: twirl;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    text-align: center;
+  }
+  
+  @keyframes twirl {
+    from {
+      transform: rotate(-1220deg);
+    }
+  
+    to {
+      transform: rotate(410deg)
+    }
+}
 
 button {
   padding: .1em;
@@ -267,8 +290,9 @@ button:focus {
   display: flex;
   justify-content: center;
   font-family: 'Rubik Iso', cursive;
+    font-family: 'Russo One', sans-serif;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.5em;
   height: 50px;
   animation-duration: .1s;
     animation-name: spin;
@@ -291,6 +315,8 @@ button:focus {
 
 .round {
   font-size: 1.5em;
+  font-family: 'Rubik Iso', cursive;
+    font-family: 'Russo One', sans-serif;
 }
 
 .playerScoreAndRound {
@@ -391,6 +417,3 @@ h1{
       transform: rotate(-2deg)
     }
  }
-
-
-/* .compChoicePlusScore {} *//* .compChoicePlusScore {} */
