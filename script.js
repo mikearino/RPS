@@ -64,9 +64,6 @@ roundPlayerScore.classList.add('playerScoreAndRound')
 const compChoiceAndScore = document.createElement('div');
 compChoiceAndScore.classList.add('compChoicePlusScore')
 
-window.addEventListener("load", (event) => {
-  acid.play()
-});
 
 const getComputerChoice = () => {
   //randomly choose a number between 1 and 3 then boolean object
@@ -202,3 +199,7 @@ instructions.setAttribute('style', 'display: none;');
 
 setTimeout(function(){title.classList.add('change')},3500);
 setTimeout(function(){console.log("wow")},3500);
+
+window.addEventListener("load", (event) => {
+  acid.play()
+});
