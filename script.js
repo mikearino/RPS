@@ -1,8 +1,6 @@
 let acid = new Audio('media/Acid.wav')
 acid.volume = .1;
-window.addEventListener("load", (event) => {
-  acid.play()
-});
+
 let clank = new Audio('media/clank-1.wav')
 clank.volume =.05; 
 let glass = new Audio('media/glass.wav') 
@@ -66,6 +64,9 @@ roundPlayerScore.classList.add('playerScoreAndRound')
 const compChoiceAndScore = document.createElement('div');
 compChoiceAndScore.classList.add('compChoicePlusScore')
 
+window.addEventListener("load", (event) => {
+  acid.play()
+});
 
 const getComputerChoice = () => {
   //randomly choose a number between 1 and 3 then boolean object
