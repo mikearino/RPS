@@ -3,15 +3,25 @@ document.body.addEventListener("mousemove", function () {
     acid.play()
 })
 let acid = new Audio('media/Acid.wav')
-let clank = new Audio('media/clank-1.wav') 
+acid.volume = .5;
+let clank = new Audio('media/clank-1.wav')
+clank.volume =.5; 
 let glass = new Audio('media/glass.wav') 
+glass.volume = .5;
 let glass2 = new Audio('media/glass-2.wav') 
+glass2.volume = .5;
 let glass3 = new Audio('media/glass-3.wav') 
+glass3.volume = .5;
 let punch = new Audio('media/punch.wav') 
+punch.volume = .5;
 let scissor = new Audio('media/scissors.wav') 
+scissor.volume = .5;
 let groan = new Audio('media/groan.wav')
+groan.volume = .5;
 let moan = new Audio('media/moan.wav')
+moan.volume = .5;
 let chop = new Audio('media/chop.wav')
+chop.volume = .5;
 let cheering = new Audio('media/cheering.wav')
 cheering.volume = .5;
 let booing = new Audio('media/booing.wav')
