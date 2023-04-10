@@ -1,4 +1,4 @@
-# Rock Paper Scissors :rock: :paper: :scissors:
+# Rock Paper Scissors 🪨 📄 ✂️
 
 mikearino.github.io/RPS/
 
