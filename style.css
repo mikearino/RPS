@@ -129,8 +129,6 @@ q:after {
   content: none;
 }
 
-
-
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -147,24 +145,23 @@ body {
     height: 100vh;
   }
 
-    @keyframes gradient {
-      0% {
-        background-position: 0% 20%;
-      }
-      25% {
-          background-position: 80% 15%;
-        }
-      50% {
-        background-position: 100% 5%;
-      }
-      75% {
-        background-position: 90% 1%;
-      }
-      100% {
-        background-position: 10% 30%;
-      }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 20%;
     }
-
+    25% {
+        background-position: 80% 15%;
+      }
+    50% {
+      background-position: 100% 5%;
+    }
+    75% {
+      background-position: 90% 1%;
+    }
+    100% {
+      background-position: 10% 30%;
+    }
+}
 
 h1 {
   font-family: 'Rubik Iso', cursive;
@@ -173,20 +170,41 @@ h1 {
   font-weight: bold;
   text-align: center;
   margin: .5em;
-  }
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+
+    75% {
+      font-size: 300%;
+      margin-left: 25%;
+      width: 150%;
+    }
+
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
     
 h2 {
   margin-top: 1em;
-  
-    font-family: 'Russo One', sans-serif;
+  font-family: 'Russo One', sans-serif;
   font-size: 40px;
   color: white;
   font-weight: bold;
   animation-duration: 5s;
-    animation-name: twirl;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
-    text-align: center;
+  animation-name: twirl;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  text-align: center;
   }
   
   @keyframes twirl {
@@ -214,21 +232,22 @@ button:active {
     border-color: #ffc600;
     box-shadow: 0 0 1rem #ffc600;
 }
+
 button:hover {
   animation-duration: .1s;
   animation-name: grow;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
     }
-      @keyframes grow {
-    from {
-          transform: rotate(0deg);
-          transform: scale(1.2);
-        }
-      to {
-          transform: rotate(360deg)
-        } 
-      } 
+  @keyframes grow {
+  from {
+      transform: rotate(0deg);
+      transform: scale(1.2);
+    }
+  to {
+      transform: rotate(360deg)
+    } 
+} 
 
 button:focus {
   animation-duration: .4s;
@@ -248,17 +267,12 @@ button:focus {
   }
 }
 
-
-  
-     
-
 .display {
   color: white;
   border: white 10px;
   height: 25em;
   width: 35em;
 }
-
 
 .compScore {
   width: 6em;
@@ -277,7 +291,7 @@ button:focus {
   animation-name: spin;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  }
+}
 
   @keyframes spin {
     from {
@@ -287,7 +301,7 @@ button:focus {
     to {
       transform: rotate(60deg)
     }
-  }
+}
 
 .gameDisplay {
   display: flex;
@@ -298,23 +312,20 @@ button:focus {
   font-size: 1.5em;
   height: 50px;
   animation-duration: .1s;
-    animation-name: spin;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-  }
-  
-  @keyframes spin {
-    from {
-      transform: rotate(-2deg);
-    }
-  
-    to {
-      transform: rotate(3deg)
-    }
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(-2deg);
   }
 
-
-
+  to {
+    transform: rotate(3deg)
+  }
+}
 
 .round {
   font-size: 1.5em;
@@ -323,17 +334,16 @@ button:focus {
 }
 
 .playerScoreAndRound {
-  
-      display: flex;
-      justify-content: space-around;
-      margin: 2em;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
+  margin: 2em;
+  justify-content: space-around;
   font-family: 'Rubik Iso', cursive;
   font-weight: bold;
   animation-duration: .3s;
-    animation-name: grow;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
+  animation-name: grow;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
   }
   
   @keyframes grow {
@@ -346,12 +356,13 @@ button:focus {
       transform: rotate(360deg)
     }
 }
+
 .compScore {
   font-size: 2em;
   animation-duration: .2s;
-    animation-name: grow;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
+  animation-name: grow;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
   }
   
   @keyframes grow {
@@ -378,37 +389,16 @@ button:focus {
  flex-direction: row;
 }
 
-h1{
-  animation-duration: 3s;
-  animation-name: slidein;
-  animation-iteration-count: 1;
-  animation-direction: alternate;
-}
 
 
- @keyframes slidein {
-   from {
-     margin-left: 100%;
-     width: 300%;
-   }
 
-   75% {
-     font-size: 300%;
-     margin-left: 25%;
-     width: 150%;
-   }
 
-   to {
-     margin-left: 0%;
-     width: 100%;
-   }
- }
  
- .change {
+.change {
   animation-name: wobbles;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
   }
   
   @keyframes wobbles {
@@ -421,7 +411,6 @@ h1{
     }
  }
  
-
  @media (max-width: 800px) {
   h1 {
     margin: .2em;
@@ -429,51 +418,57 @@ h1{
   h2 {
     margin-bottom: 1em;
   } 
-  .gameDisplay {
+
+.gameDisplay {
     font-size: 20px;
     margin-right: 1em;
-  }
-   .rock, .paper, .scissors {
-     height: 1em;
-     width: 1em;
-     background-color: black;
-     font-size: 3em;
-   }
-  .compChoice {
-    display: flex;
-    font-size: 4em;
-    margin-right: .1em;
-  }
-  .compChoicePlusScore {
+}
+
+.rock, .paper, .scissors {
+  height: 1em;
+  width: 1em;
+  background-color: black;
+  font-size: 3em;
+}
+
+.compChoice {
+  display: flex;
+  font-size: 4em;
+  margin-right: .1em;
+}
+
+.compChoicePlusScore {
   display: flex;
   justify-content: center;
   flex-direction: row;
+}
 
-  }
-  .compScore {
+.compScore {
     margin-right: 15px;
-  };
-  .playerScoreAndRound {
+}
 
-    display: flex;
-    gap: 2em;
-    justify-content: center;
-    font-family: 'Rubik Iso', cursive;
-    font-weight: bold;
-    animation-duration: .3s;
-    animation-name: grow;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
-  }
-  .playerScore {
-    margin-right: .2em;
-  }
-  .round {
-    margin-right: -5em;
-  }
- }
+.playerScoreAndRound {
+  display: flex;
+  gap: 2em;
+  justify-content: space-around;
+  font-family: 'Rubik Iso', cursive;
+  font-weight: bold;
+  animation-duration: .3s;
+  animation-name: grow;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
 
- .weaponContainer {
+.playerScore {
+  margin-right: -.2em;
+}
+
+.round {
+  margin-right: -8em;
+}
+
+.weaponContainer {
   margin-bottom: 3em;
   font-size: 2em;
- }
+}
+}

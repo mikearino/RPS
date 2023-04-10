@@ -1,6 +1,6 @@
+//Initialize audio
 let acid = new Audio('media/Acid.wav')
 acid.volume = .1;
-
 let clank = new Audio('media/clank-1.wav')
 clank.volume =.05; 
 let glass = new Audio('media/glass.wav') 
@@ -24,8 +24,6 @@ cheering.volume = .01;
 let booing = new Audio('media/booing.wav')
 booing.volume = .01;
 
-
-
 let audio_files = [clank, glass, glass2, glass3, punch, scissor, moan, chop];
 
 //initialize player scores
@@ -35,13 +33,7 @@ let compScore = 5;
 let computerHeartsArray = ['♥️','♥️','♥️','♥️','♥️'];
 let round = 1;
 
-
-// setTimeout(acid.play(),500);
-
-//select the div where all the display info will go
 const title = document.querySelector('h1');
-//After 2 seconds change the class to wobble
-
 const display = document.querySelector('.display');
 const playerDisplay = document.createElement('div');
 playerDisplay.classList.add('playerScore');
@@ -55,15 +47,12 @@ compChoiceDisplay.classList.add('compChoice');
 const playerChoiceDisplay = document.createElement('div');
 const gameDisplay = document.createElement('div');
 gameDisplay.classList.add('gameDisplay');
-
 const youWin = document.createElement('div');
-
 const youLose = document.createElement('div');
 const roundPlayerScore = document.createElement('div');
 roundPlayerScore.classList.add('playerScoreAndRound')
 const compChoiceAndScore = document.createElement('div');
 compChoiceAndScore.classList.add('compChoicePlusScore')
-
 
 const getComputerChoice = () => {
   //randomly choose a number between 1 and 3 then boolean object
@@ -115,9 +104,6 @@ const playRound = (playerChoice, compChoice) => {
   }
 }
 
-
-
-//Starts a game, records score and reports a winner or loser at the end.
 const game = (playerChoice) => {
   const compChoice = getComputerChoice()
   
@@ -131,52 +117,42 @@ const game = (playerChoice) => {
   playerDisplay.innerHTML = `🧑‍🚀 ${playerHeartsArray.join('')}`
   roundPlayerScore.appendChild(playerDisplay)
     
-    display.appendChild(compChoiceAndScore)
-    compDisplay.innerHTML = `🤖 ${computerHeartsArray.join('')}`
-    compChoiceAndScore.appendChild(compDisplay)
+  display.appendChild(compChoiceAndScore)
+  compDisplay.innerHTML = `🤖 ${computerHeartsArray.join('')}`
+  compChoiceAndScore.appendChild(compDisplay)
 
-    compChoiceDisplay.innerHTML = `${compChoice == "rock" ? "🪨" : '' 
-    || compChoice == "paper" ? "📄" : '' || compChoice == "scissors" ? "✂️" : ''}🤖`
-    compChoiceAndScore.appendChild(compChoiceDisplay)
-    // Possibly remove 🤖this\/
-    // playerChoiceDisplay.innerHTML = `Player Choice: ${playerChoice}`
-    // display.appendChild(playerChoiceDisplay)
+  compChoiceDisplay.innerHTML = `${compChoice == "rock" ? "🪨" : '' 
+  || compChoice == "paper" ? "📄" : '' || compChoice == "scissors" ? "✂️" : ''}🤖`
+  compChoiceAndScore.appendChild(compChoiceDisplay)
 
-    
-
-    round++
-    console.table(playerScore, compScore)
-    if (playerScore <= 0) {
-     
-      // display.appendChild(youWin)
-      booing.play();
-      setTimeout(function(){alert("Bummer you lost the game."),document.location.reload()},500);
-      playerScore = 5;
-      compScore = 5;
-      round = 1;
-      display.removeChild(roundDisplay)
-      display.removeChild(playerDisplay)
-      display.removeChild(compDisplay)
-      display.removeChild(compChoiceDisplay)
-      display.removeChild(playerChoiceDisplay)
-      display.removeChild(gameDisplay)
-    } else if (compScore <= 0) {
-      // display.appendChild(youLose)
-      cheering.play();
-      setTimeout(function(){alert("Congrats you win the game!"),document.location.reload()},500);
-      playerScore = 5;
-      compScore = 5;
-      round = 1;
-      display.removeChild(roundDisplay)
-      display.removeChild(playerDisplay)
-      display.removeChild(compDisplay)
-      display.removeChild(compChoiceDisplay)
-      display.removeChild(playerChoiceDisplay)
-      display.removeChild(gameDisplay)
-    }
-    // youWin.innerHTML = "Congrats you win the game!" 
-    // youLose.innerHTML = "Bummer you lost the game."
+  round++
+  console.table(playerScore, compScore)
+  if (playerScore <= 0) {
+    booing.play();
+    setTimeout(function(){alert("Bummer you lost the game."),document.location.reload()},500);
+    playerScore = 5;
+    compScore = 5;
+    round = 1;
+    display.removeChild(roundDisplay)
+    display.removeChild(playerDisplay)
+    display.removeChild(compDisplay)
+    display.removeChild(compChoiceDisplay)
+    display.removeChild(playerChoiceDisplay)
+    display.removeChild(gameDisplay)
+  } else if (compScore <= 0) {
+    cheering.play();
+    setTimeout(function(){alert("Congrats you win the game!"),document.location.reload()},500);
+    playerScore = 5;
+    compScore = 5;
+    round = 1;
+    display.removeChild(roundDisplay)
+    display.removeChild(playerDisplay)
+    display.removeChild(compDisplay)
+    display.removeChild(compChoiceDisplay)
+    display.removeChild(playerChoiceDisplay)
+    display.removeChild(gameDisplay)
   }
+}
 
 //initialize buttons with event listeners
 const rock = document.querySelector('.rock')
@@ -196,11 +172,9 @@ scissors.addEventListener('click', ()=> {
 game("scissors")
 instructions.setAttribute('style', 'display: none;'); 
 })
-
+//change class after slide in to wobble
 setTimeout(function(){title.classList.add('change')},3500);
-setTimeout(function(){console.log("wow")},3500);
-
-
+//play music on mousemove
 window.addEventListener("mousemove", (event) => {
   acid.play()
 });
